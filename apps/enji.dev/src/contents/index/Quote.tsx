@@ -20,7 +20,24 @@ function Quote() {
       />
       <span className={clsx('flex flex-col')}>
         <span className={clsx('leading-[1.15]')}>
-          <em>Beautiful</em>{' '}
+          <span>No Matter how</span> {' '}
+        
+          <strong
+            className={clsx(
+              'relative font-extrabold text-slate-600',
+              'dark:text-slate-300'
+            )}
+          >
+            <span
+              className={clsx(
+                'absolute -left-0.5 right-0 top-1 bottom-0 z-[-1] rounded-md bg-slate-100 px-1',
+                'lg:-left-1.5 lg:-right-0.5 lg:top-2 lg:bottom-0',
+                'dark:bg-slate-800'
+              )}
+            />
+            GOOD
+          </strong>{' '}
+          <em>you get,</em>
         </span>
         <span
           className={clsx('flex items-center gap-2 leading-[1.15]', 'lg:gap-4')}
@@ -39,16 +56,16 @@ function Quote() {
                 'dark:text-slate-300'
               )}
             >
-              inside
+              YOU
             </strong>{' '}
-            and{' '}
+            can always get{' '}
             <strong
               className={clsx(
                 'font-extrabold text-slate-600',
                 'dark:text-slate-300'
               )}
             >
-              out{' '}
+              BETTER,{' '}
             </strong>
           </span>
           <span
@@ -60,7 +77,7 @@ function Quote() {
           />
         </span>
         <span className={clsx('leading-[1.15]')}>
-          is a{' '}
+          and that's the{' '}
           <strong
             className={clsx(
               'relative font-extrabold text-slate-600',
@@ -74,8 +91,9 @@ function Quote() {
                 'dark:bg-slate-800'
               )}
             />
-            must.
-          </strong>
+            EXCITING
+          </strong>{' '}
+          Part.
         </span>
       </span>
     </blockquote>
