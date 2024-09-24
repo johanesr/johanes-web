@@ -69,10 +69,10 @@ function HeaderTitle() {
           transition={{ delay: 0.2 }}
         >
           I&apos;m{' '}
-          <strong className={clsx('text-accent-600', 'dark:text-accent-500')}>
-            Enji
+          <strong className={clsx('text-accent-600', 'text-red-500')}>
+            Johanes
           </strong>{' '}
-          Kusnadi,{' '}
+          Ronaldo,{' '}
         </m.span>
         <m.h1
           className={clsx(
@@ -84,17 +84,40 @@ function HeaderTitle() {
           animate={animation.show}
           transition={{ delay: 0.3 }}
         >
-          <span className={clsx('lowercase')}>A</span>{' '}
           <strong
             className={clsx(
-              'font-bold lowercase text-slate-700',
+              'font-bold text-slate-700',
               'dark:text-slate-300'
             )}
           >
-            Front-End Developer
+            A Software Engineer & CEO of 
           </strong>{' '}
-          who loves intuitive,{' '}
-          <span className={clsx('block')}>clean and modern UI design.</span>
+          <span className={clsx('block', 'font-bold text-slate-700', 'text-red-500')}>
+            PT. Bunka Panca Karya
+          </span>
+        </m.h1>
+        <m.h1
+          className={clsx(
+            'block text-base text-slate-600',
+            'md:text-xl',
+            'dark:text-slate-400',
+            'pt-5'
+          )}
+          initial={animation.hide}
+          animate={animation.show}
+          transition={{ delay: 0.3 }}
+        >
+          <strong
+            className={clsx(
+              'font-bold text-slate-700',
+              'dark:text-slate-300'
+            )}
+          >
+            Commissioner of
+          </strong>{' '}
+          <span className={clsx('block', 'font-bold text-slate-700', 'text-blue-300')}>
+            PT. Layani Solusi Indonesia
+          </span>
         </m.h1>
       </span>
     </div>

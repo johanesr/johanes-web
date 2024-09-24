@@ -11,9 +11,9 @@ import NavLogo from '@/components/navigations/NavLogo';
 import useOnScroll from '@/hooks/useOnScroll';
 
 const workLinks = [
-  { title: 'Skills & Tools', href: '/work/skills-and-tools' },
+  // { title: 'Skills & Tools', href: '/work/skills-and-tools' },
   { title: 'Experience', href: '/work/experience' },
-  { title: 'Studio', href: '/work/studio' },
+  // { title: 'Studio', href: '/work/studio' },
   { title: 'Contact', href: '/work/contact' },
 ];
 
@@ -44,18 +44,20 @@ function Navbar() {
             'md:px-4'
           )}
         >
-          <nav className={clsx('flex', 'md:gap-2')} data-accent="violet">
-            <NavLogo href="/" title="Home" />
+          <nav className={clsx('flex', 'md:gap-2')} data-accent="red">
             <ul className={clsx('flex items-center', 'md:gap-1')}>
+              <li>
+                <NavLink title="Home" href="/" />
+              </li>
               <li>
                 <NavLink title="Projects" href="/projects" />
               </li>
-              <li>
+              {/* <li>
                 <NavLink title="Blog" href="/blog" />
               </li>
               <li>
                 <NavLink title="T.I.L" href="/today-i-learned" />
-              </li>
+              </li> */}
               <li className={clsx('lg:hidden')} data-accent="blue">
                 <NavLinkDropdown title="Work" items={workLinks} />
               </li>
@@ -67,14 +69,14 @@ function Navbar() {
           <ul className={clsx('flex items-center')}>
             <li className={clsx('hidden', 'sm:block')}>
               <NavIcon
-                href="https://twitter.com/enjidev"
+                href="https://x.com/plauxjoke"
                 icon={<TwitterIcon className={clsx('h-5 w-5')} />}
                 title="Twitter"
               />
             </li>
             <li className={clsx('hidden', 'sm:block')}>
               <NavIcon
-                href="https://github.com/enjidev"
+                href="https://github.com/johanesr"
                 icon={<GitHubIcon className={clsx('h-5 w-5')} />}
                 title="GitHub"
               />
@@ -87,9 +89,9 @@ function Navbar() {
                 )}
               />
             </li>
-            <li className={clsx('mr-2')}>
+            {/* <li className={clsx('mr-2')}>
               <NavIconQuickAccess />
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

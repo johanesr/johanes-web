@@ -11,7 +11,7 @@ export type NavLinkProps = {
 
 function NavLink({ title, href, icon = null }: NavLinkProps) {
   return (
-    <Link href={href} className={clsx('nav-link')}>
+    <Link href={href} className={clsx('nav-link', 'text-red-500')}>
       {title}
       {icon}
     </Link>
