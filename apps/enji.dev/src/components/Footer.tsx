@@ -112,13 +112,12 @@ function FooterDescription() {
         About Me
       </div>
       <p className={clsx('mb-4 font-normal leading-relaxed')}>
-        I&apos;m Enji, a <strong>front-end developer</strong> who loves
-        intuitive, clean and modern UI design.
+        I&apos;m Johanes ronaldo, a <strong>CEO</strong> who loves to <strong>CODE</strong> :)
       </p>
       <ul className={clsx('-ml-2 flex gap-1')}>
         <li>
           <a
-            href="https://twitter.com/enjidev"
+            href="https://x.com/plauxjoke"
             target="_blank"
             rel="noreferrer nofollow"
             className={clsx('flex h-9 w-9 items-center justify-center')}
@@ -130,7 +129,7 @@ function FooterDescription() {
         </li>
         <li>
           <a
-            href="https://github.com/enjidev"
+            href="https://github.com/johanesr"
             target="_blank"
             rel="noreferrer nofollow"
             className={clsx('flex h-9 w-9 items-center justify-center')}
@@ -140,7 +139,7 @@ function FooterDescription() {
             <GitHubIcon className={clsx('h-5 w-5')} />
           </a>
         </li>
-        <li>
+        {/* <li>
           <a
             href="https://figma.com/@enjidev"
             target="_blank"
@@ -151,7 +150,7 @@ function FooterDescription() {
           >
             <FigmaIcon className={clsx('h-5 w-5')} />
           </a>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
@@ -171,84 +170,15 @@ function Footer() {
             <div className={clsx('flex-1')}>
               <FooterDescription />
             </div>
-            <div
-              className={clsx(
-                '-mx-2 flex flex-1 flex-col gap-8',
-                'sm:flex-row sm:gap-16 lg:mx-0'
-              )}
-            >
-              <div className={clsx('flex', 'sm:gap-16')}>
-                <FooterGroup
-                  title="Work"
-                  links={[
-                    { title: 'Contact', href: '/work/contact' },
-                    { title: 'Experience', href: '/work/experience' },
-                    {
-                      title: 'Services',
-                      href: '/work/services',
-                      label: 'soon',
-                    },
-                    {
-                      title: 'Skills and Tools',
-                      href: '/work/skills-and-tools',
-                    },
-                    { title: 'Studio', href: '/work/studio' },
-                  ]}
-                />
-                <FooterGroup
-                  title="Learn"
-                  links={[
-                    {
-                      title: 'Docs',
-                      href: '/docs',
-                    },
-                    {
-                      title: 'Personal Blog',
-                      href: '/blog',
-                    },
-                    {
-                      title: 'T.I.L',
-                      href: '/today-i-learned',
-                      label: 'new',
-                    },
-                  ]}
-                />
-              </div>
-              <div className={clsx('flex', 'sm:gap-16')}>
-                <FooterGroup
-                  title="This Site"
-                  links={[
-                    {
-                      title: 'Design Concept',
-                      href: 'https://www.figma.com/community/file/1176392613303840973',
-                      isInternal: false,
-                    },
-                    {
-                      title: 'Source Code',
-                      href: 'https://github.com/enjidev/enji.dev',
-                      isInternal: false,
-                    },
-                    {
-                      title: 'Credits',
-                      href: '/credits',
-                    },
-                  ]}
-                />
-              </div>
+            <div className={clsx('flex', 'sm:gap-16')}>
+              <FooterGroup
+                title="Work"
+                links={[
+                  { title: 'Contact', href: '/work/contact' },
+                  { title: 'Experience', href: '/work/experience' }
+                ]}
+              />
             </div>
-          </div>
-        </div>
-        <div
-          className={clsx(
-            'border-divider-light flex justify-between border-t py-6 text-xs',
-            'dark:border-divider-dark'
-          )}
-        >
-          <div className={clsx('font-semibold')}>
-            &copy; {dayjs().format('YYYY')}, Enji Kusnadi
-          </div>
-          <div className={clsx('text-slate-500', 'dark:text-slate-400')}>
-            <LastUpdate />
           </div>
         </div>
       </div>
