@@ -30,10 +30,10 @@ function TableOfContentsLink({
 }
 
 interface TableOfContensProps {
-  items: Array<TTableOfContentsItem>;
+  items?: Array<TTableOfContentsItem>;
 }
 
-function TableOfContents({ items }: TableOfContensProps) {
+function TableOfContents({ items = [] }: TableOfContensProps) {
   const isScrolled = useOnScroll(200);
   const { currentVisibles } = useScrollSpy();
 
