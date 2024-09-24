@@ -47,9 +47,9 @@ function Navbar() {
               <li>
                 <NavLink title="Home" href="/" />
               </li>
-              <li>
+              {/* <li>
                 <NavLink title="Projects" href="/projects" />
-              </li>
+              </li> */}
               <li className={clsx('lg:hidden')} data-accent="blue">
                 <NavLinkDropdown title="Work" items={workLinks} />
               </li>
