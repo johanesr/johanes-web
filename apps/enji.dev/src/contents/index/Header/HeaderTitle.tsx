@@ -92,7 +92,7 @@ function HeaderTitle() {
           >
             A Software Engineer & CEO of 
           </strong>{' '}
-          <span className={clsx('block', 'font-bold text-slate-700', 'text-red-500')}>
+          <span className={clsx('block', 'font-bold', 'text-red-500')}>
             PT. Bunka Panca Karya
           </span>
         </m.h1>
@@ -115,7 +115,7 @@ function HeaderTitle() {
           >
             Commissioner of
           </strong>{' '}
-          <span className={clsx('block', 'font-bold text-slate-700', 'text-blue-300')}>
+          <span className={clsx('block', 'font-bold', 'text-blue-300')}>
             PT. Layani Solusi Indonesia
           </span>
         </m.h1>
