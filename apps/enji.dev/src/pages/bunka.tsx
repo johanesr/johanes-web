@@ -7,7 +7,7 @@ function Bunka() {
     const [width, setWidth] = useState(0);
     const [thickness, setThickness] = useState(0);
     const [density, setDensity] = useState(7850);
-    const [purchase, setPurchase] = useState(20000);
+    const [purchase, setPurchase] = useState(21000);
     const [selling, setSelling] = useState(0);
 
     const [variableSizeValue, setVariableSizeValue] = useState(0)
@@ -58,36 +58,101 @@ function Bunka() {
 
     return (
     <>
-        <div className={clsx('flex items-center justify-center py-8 m-10')} /> 
+        <div className={clsx('flex items-center justify-center py-8 m-2')} /> 
 
         <div className={clsx('flex items-center justify-center py-8')}>
-            <button className={clsx('button button--solid min-w-[128px]', 'md:button--big')} onClick={setSelected}>
+            <button className={clsx('button button--solid min-w-[1080px]', 'md:button--big')} onClick={setSelected}>
                 {selectedCalculate ? "Calculate Price" : "Calculate Weight/Length"}
             </button>
         </div>
-        <div className={clsx('flex flex-row items-center justify-center content-center py-8')}>
-            <span className={clsx('button button--solid min-w-[128px]', 'md:button--big')}>Width</span>
-            <input type="number" className={clsx('test')}/>
+        <div className={clsx('flex flex-row items-center justify-center content-center py-2')}>
+            <span className={clsx('button button--solid min-w-[250px]', 'md:button--big')}>Width (/mm)</span>
+            <input type="number" className={clsx('bunka-input')} onChange={changeWidth}/>
         </div>
-        {/* <div className={clsx('flex items-center justify-center py-8')}>
-            <span className={clsx('button button--solid min-w-[128px]', 'md:button--big')}>Thickness</span>
-            <input type="text" />
+        <div className={clsx('flex flex-row items-center justify-center content-center py-2')}>
+            <span className={clsx('button button--solid min-w-[250px]', 'md:button--big')}>Thickness (/mm)</span>
+            <input type="number" className={clsx('bunka-input')} onChange={changeThickness}/>
         </div>
-        <div className={clsx('flex items-center justify-center py-8')}>
-            <span className={clsx('button button--solid min-w-[128px]', 'md:button--big')}>Density</span>
-            <input type="text" />
+        <div className={clsx('flex flex-row items-center justify-center content-center py-2')}>
+            <span className={clsx('button button--solid min-w-[250px]', 'md:button--big')}>Density (kg/m^3)</span>
+            <input type="number" className={clsx('bunka-input')} onChange={changeDensity} value={density}/>
         </div>
-
-        {selectedCalculate ?
-            <div className={clsx('flex items-center justify-center py-8')}>
-                <span className={clsx('button button--solid min-w-[128px]', 'md:button--big')}>Selling Price</span>
-                <input type="text" />
+        {
+            selectedCalculate ?
+            <div className={clsx('flex flex-row items-center justify-center content-center py-2')}>
+                <span className={clsx('button button--solid min-w-[250px]', 'md:button--big')}>Harga Modal (Rp.)</span>
+                <input type="number" className={clsx('bunka-input')} onChange={changePurchase} value={purchase}/>
             </div> : 
-            <div className={clsx('flex items-center justify-center py-8')}>
-                <span className={clsx('button button--solid min-w-[128px]', 'md:button--big')}>Weight / Length</span>
-                <input type="text" />
-            </div> */}
+            <div className={clsx('flex flex-row items-center justify-center content-center py-2')}>
+                <span className={clsx('button button--solid min-w-[250px]', 'md:button--big')}>Panjang/Berat (m/kg)</span>
+                <input type="number" className={clsx('bunka-input')} onChange={changeVariableSize} value={variableSizeValue}/>
+            </div>
         }
+        {
+            selectedCalculate ?
+            <div className={clsx('flex items-center justify-center py-8')}>
+                <button className={clsx('button button--solid min-w-[250px]', 'md:button--big')} onClick={handleCalculatePrice}>
+                    Calculate Price
+                </button>
+            </div> :
+            <div className={clsx('flex items-center justify-center py-8')}>
+                <div className={clsx('flex items-center justify-center py-2 mr-10')}>
+                    <button className={clsx('button button--solid min-w-[250px]', 'md:button--big')} onClick={handleCalculateLength}>
+                        Calculate Length
+                    </button>
+                </div>
+                <div className={clsx('flex items-center justify-center py-2')}>
+                    <button className={clsx('button button--solid min-w-[250px]', 'md:button--big')} onClick={handleCalculateWeight}>
+                        Calculate Weight
+                    </button>
+                </div>
+            </div>
+        }
+
+        {selectedCalculate ? 
+            <>
+                <div className={clsx('flex flex-row items-center justify-center content-center py-8')}>
+                    <span className={clsx('button button--solid min-w-[128px] mx-10', 'md:button--big')}>
+                        DPP:
+                    </span>
+                    <span className={clsx('button button--solid min-w-[300px]', 'md:button--big')}>
+                        RP. {Math.ceil(selling/1.11)}
+                    </span>
+                </div> 
+                <div className={clsx('flex flex-row items-center justify-center content-center py-8')}>
+                    <span className={clsx('button button--solid min-w-[128px] mx-10', 'md:button--big')}>
+                        With PPN:
+                    </span>
+                    <span className={clsx('button button--solid min-w-[300px]', 'md:button--big')}>
+                        RP. {Math.ceil(selling)}
+                    </span>
+                </div> 
+            </>:
+            <>
+                {isWeightSelected ?
+                    <div className={clsx('flex flex-row items-center justify-center content-center py-8')}>
+                        <span className={clsx('button button--solid min-w-[128px] mx-10', 'md:button--big')}>
+                            {isWeightSelected && 'Weight'}
+                        </span>
+                        <span className={clsx('button button--solid min-w-[300px]', 'md:button--big')}>
+                            {weightResult}
+                        </span>
+                    </div> :
+                    <div className={clsx('flex flex-row items-center justify-center content-center py-8')}>
+                        <span className={clsx('button button--solid min-w-[128px] mx-10', 'md:button--big')}>
+                            Length:
+                        </span>
+                        <span className={clsx('button button--solid min-w-[300px]', 'md:button--big')}>
+                            {lengthResult}
+                        </span>
+                    </div>
+                }
+                
+                
+            </>
+        }
+
+
     </>
     );
 }
