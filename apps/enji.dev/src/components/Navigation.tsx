@@ -81,6 +81,9 @@ function Navbar() {
                 )}
               />
             </li>
+            <li className={clsx('mr-2')}>
+              <NavIconQuickAccess />
+            </li>
           </ul>
         </div>
       </div>
