@@ -3,25 +3,10 @@ import Link from 'next/link';
 
 import {
   ExternalLink,
-  FigmaIcon,
   GitHubIcon,
   TwitterIcon,
 } from '@/components/Icons';
 
-import dayjs from '@/utils/dayjs';
-
-function LastUpdate() {
-  return (
-    <a
-      href="https://github.com/enjidev/enji.dev"
-      target="_blank"
-      rel="noreferrer nofollow"
-      className={clsx('hover:underline')}
-    >
-      <span>see the recent update on GitHub</span>
-    </a>
-  );
-}
 
 interface FooterLinkProps {
   title: string;
@@ -139,18 +124,6 @@ function FooterDescription() {
             <GitHubIcon className={clsx('h-5 w-5')} />
           </a>
         </li>
-        {/* <li>
-          <a
-            href="https://figma.com/@enjidev"
-            target="_blank"
-            rel="noreferrer nofollow"
-            className={clsx('flex h-9 w-9 items-center justify-center')}
-            aria-label="My Figma profile"
-            title="My Figma profile"
-          >
-            <FigmaIcon className={clsx('h-5 w-5')} />
-          </a>
-        </li> */}
       </ul>
     </div>
   );

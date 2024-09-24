@@ -1,5 +1,3 @@
-import { GoogleAnalytics } from '@next/third-parties/google';
-
 import RootLayout from '@/components/layouts/Root';
 import WithNavigationFooter from '@/components/layouts/WithNavigationFooter';
 import Provider from '@/providers';

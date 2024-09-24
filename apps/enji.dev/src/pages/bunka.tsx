@@ -61,7 +61,7 @@ function Bunka() {
         <div className={clsx('flex items-center justify-center py-8 m-2')} /> 
 
         <div className={clsx('flex items-center justify-center py-8')}>
-            <button className={clsx('button button--solid min-w-[1080px]', 'md:button--big')} onClick={setSelected}>
+            <button type="button" className={clsx('button button--solid min-w-[1080px]', 'md:button--big')} onClick={setSelected}>
                 {selectedCalculate ? "Calculate Price" : "Calculate Weight/Length"}
             </button>
         </div>
@@ -91,18 +91,18 @@ function Bunka() {
         {
             selectedCalculate ?
             <div className={clsx('flex items-center justify-center py-8')}>
-                <button className={clsx('button button--solid min-w-[250px]', 'md:button--big')} onClick={handleCalculatePrice}>
+                <button type="button" className={clsx('button button--solid min-w-[250px]', 'md:button--big')} onClick={handleCalculatePrice}>
                     Calculate Price
                 </button>
             </div> :
             <div className={clsx('flex items-center justify-center py-8')}>
                 <div className={clsx('flex items-center justify-center py-2 mr-10')}>
-                    <button className={clsx('button button--solid min-w-[250px]', 'md:button--big')} onClick={handleCalculateLength}>
+                    <button type="button" className={clsx('button button--solid min-w-[250px]', 'md:button--big')} onClick={handleCalculateLength}>
                         Calculate Length
                     </button>
                 </div>
                 <div className={clsx('flex items-center justify-center py-2')}>
-                    <button className={clsx('button button--solid min-w-[250px]', 'md:button--big')} onClick={handleCalculateWeight}>
+                    <button type="button" className={clsx('button button--solid min-w-[250px]', 'md:button--big')} onClick={handleCalculateWeight}>
                         Calculate Weight
                     </button>
                 </div>
@@ -128,7 +128,7 @@ function Bunka() {
                     </span>
                 </div> 
             </>:
-            <>
+            <div>
                 {isWeightSelected ?
                     <div className={clsx('flex flex-row items-center justify-center content-center py-8')}>
                         <span className={clsx('button button--solid min-w-[128px] mx-10', 'md:button--big')}>
@@ -149,7 +149,7 @@ function Bunka() {
                 }
                 
                 
-            </>
+            </div>
         }
 
 
